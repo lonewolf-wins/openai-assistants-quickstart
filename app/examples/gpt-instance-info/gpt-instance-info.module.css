@@ -1,0 +1,98 @@
+/* Container styling for centering and layout */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Title styling */
+.title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Info container styling */
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Instance item styling */
+.instanceItem {
+    width: 100%;
+    padding: 15px;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Instance title styling */
+.instanceTitle {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0070f3;
+}
+
+/* Instance status styling */
+.status {
+    font-size: 16px;
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Link styling */
+.link {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #0070f3;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* Loader text styling */
+.loader {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0070f3;
+}
+
+/* Error message styling */
+.error {
+    color: #d32f2f;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+    .infoContainer {
+        padding: 15px;
+    }
+
+    .instanceItem {
+        padding: 10px;
+    }
+
+    .title {
+        font-size: 22px;
+    }
+
+    .link {
+        font-size: 14px;
+    }
+}

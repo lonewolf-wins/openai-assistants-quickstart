@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cleanup": "npm prune && npm cache clean --force && rimraf node_modules package-lock.json .next && npm install && npm run build",
+    "lint-fix": "npm run lint --fix && npx prettier --write .",
+    "commit": "git add . && git commit -m \"Cleanup and commit - GPT Instance Info module running successfully\" && git push origin $(git rev-parse --abbrev-ref HEAD)",
+    "cleanup-and-commit": "npm run cleanup && npm run lint-fix && npm run commit"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
@@ -19,6 +23,8 @@
   "devDependencies": {
     "@types/node": "20.12.7",
     "@types/react": "18.2.79",
+    "eslint": "^9.18.0",
+    "eslint-config-next": "15.1.5",
     "typescript": "5.4.5"
   },
   "prettier": {

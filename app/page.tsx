@@ -4,12 +4,14 @@ import React from "react";
 import styles from "./page.module.css";
 
 const Home = () => {
+
   const categories = {
     "Basic chat": "basic-chat",
     "Function calling": "function-calling",
     "File search": "file-search",
     "GPT Panel": "gpt-panel",
-    All: "all",
+    "GPT Instance Information": "gpt-instance-info",
+    "All": "all",
   };
 
   return (
