@@ -22,8 +22,12 @@ const GPTInstanceInfo: React.FC = () => {
         }
         const data: GPTInstance[] = await response.json();
         setInstances(data);
-      } catch (error: any) {
-        setError(error.message);
+      } catch (error: unknown) {
+        if (error instanceof Error) {
+          setError(error.message);
+        } else {
+          setError("An unexpected error occurred");
+        }
       } finally {
         setLoading(false);
       }
