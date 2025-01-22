@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import styles from './GPTInstanceInfo.module.css';
+import styles from '../../components/GPTInstanceInfo.module.css';
 
 interface GPTInstance {
   id: string;
@@ -15,34 +15,45 @@ const GPTInstanceInfo = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchInstances = async () => {
-    try {
-      const response = await fetch('/api/assistants');
-      if (!response.ok) throw new Error(`Error: ${response.statusText}`);
-
-      const data: GPTInstance[] = await response.json();
-      setInstances(data);
-      setError(null);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "An unexpected error occurred");
-    } finally {
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
+    const fetchInstances = async () => {
+      try {
+        // Updated to match the correct API endpoint structure
+        const response = await fetch('/api/assistants');
+        if (!response.ok) {
+          throw new Error(`Error: ${response.statusText}`);
+        }
+        const data: GPTInstance[] = await response.json();
+        setInstances(data);
+      } catch (error: unknown) {
+        if (error instanceof Error) {
+          setError(error.message);
+        } else {
+          setError("An unexpected error occurred");
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
     fetchInstances();
   }, []);
 
   if (loading) {
-    return <div className={styles.loader} aria-live="polite">Loading GPT instances...</div>;
+    return (
+      <div className={styles.loader}>
+        <p>Loading GPT instances...</p>
+      </div>
+    );
   }
 
   if (error) {
     return (
-      <div className={styles.error} aria-live="assertive">
-        <p>{error}</p>
-        <button onClick={fetchInstances} className={styles.button}>Retry</button>
+      <div className={styles.error}>
+        <p>Error: {error}</p>
+        <button onClick={() => window.location.reload()} className={styles.button}>
+          Retry
+        </button>
       </div>
     );
   }
@@ -57,7 +68,7 @@ const GPTInstanceInfo = () => {
           instances.map((instance) => (
             <div key={instance.id} className={styles.instanceItem}>
               <h3 className={styles.instanceTitle}>{instance.name}</h3>
-              <p className={styles.status}>Status: {instance.status}</p>
+              <p className={styles.status}>{instance.status}</p>
               <a href={instance.link} target="_blank" rel="noopener noreferrer" className={styles.link}>
                 Learn More
               </a>
