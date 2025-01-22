@@ -1,0 +1,83 @@
+/* Container styling for centering and layout */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Title styling */
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Input container with flexbox layout */
+  .inputContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  /* Dropdown styling */
+  .dropdown {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 200px;
+  }
+  
+  /* Input field styling */
+  .input {
+    padding: 10px;
+    width: 50%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Placeholder text styling */
+  .input::placeholder {
+    color: #aaa;
+    font-style: italic;
+  }
+  
+  /* Submit button styling */
+  .button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Button hover effect */
+  .button:hover {
+    background-color: #333;
+    transition: all 0.3s ease;
+  }
+  
+  /* Response text styling */
+  .response {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  /* Responsive layout for smaller screens */
+  @media (max-width: 768px) {
+    .inputContainer {
+      flex-direction: column;
+    }
+  
+    .input, .dropdown, .button {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  
