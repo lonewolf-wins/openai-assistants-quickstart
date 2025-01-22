@@ -1,0 +1,41 @@
+.container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    margin-bottom: 16px;
+    color: #333;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .instanceItem {
+    margin-bottom: 12px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .instanceItem h3 {
+    margin: 0 0 8px 0;
+  }
+  
+  .instanceItem p {
+    margin: 4px 0;
+  }
+  
+  .instanceItem a {
+    color: #0070f3;
+    text-decoration: none;
+  }
+  
+  .instanceItem a:hover {
+    text-decoration: underline;
+  }
+  

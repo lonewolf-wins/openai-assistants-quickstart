@@ -1,0 +1,10 @@
+import GPTInstanceInfo from '../components/GPTInstanceInfo';
+
+export default function GPTInstancePage() {
+  return (
+    <div>
+      <h1>GPT Instance Information</h1>
+      <GPTInstanceInfo />
+    </div>
+  );
+}
